@@ -1,5 +1,6 @@
 import { serve } from "bun";
 import index from "./index.html";
+import { BACKEND_URL } from "../config";
 
 const server = serve({
   routes: {
@@ -39,3 +40,4 @@ const server = serve({
 });
 
 console.log(`🚀 Server running at ${server.url}`);
+console.log(`🔗 Backend URL: ${BACKEND_URL}`);
