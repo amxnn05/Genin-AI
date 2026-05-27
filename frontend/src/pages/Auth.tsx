@@ -14,6 +14,9 @@ export default function Auth() {
   async function login(provider: "github" | "google") {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: provider,
+      options: {
+        redirectTo: `${window.location.origin}/`,
+      },
     });
     if (error) {
       console.log(error);
